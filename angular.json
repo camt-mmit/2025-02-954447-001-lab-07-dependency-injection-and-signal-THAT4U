@@ -25,7 +25,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "outputpath": "dist/browser/week-07",
+            "outputPath": "dist/browser/week-07",
             "assets": [
               {
                 "glob": "**/*",

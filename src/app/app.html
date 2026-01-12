@@ -43,14 +43,23 @@
       <h1>{{ title() }}</h1>
     </div>
 
-    <input type="text" #titleInput [value]="title()" (input)="title.set(titleInput.value)"/>
-
     <nav>
-      <ul>
+      <ul class="app-cmp-nav">
         <li routerLinkActive="app-st-active">
-          <a routerLink="./example">Example</a>
+          <a routerLink="./example">
+            <i class="material-symbols-outlined">labs</i>
+            Example
+          </a>
+        </li>
+        <li routerLinkActive="app-st-active">
+          <a routerLink="./assignment">
+            <i class="material-symbols-outlined">labs</i>
+            Assignment
+          </a>
         </li>
       </ul>
+    </nav>
+  </header>
 
   <router-outlet />
-
+</div>

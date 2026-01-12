@@ -1,0 +1,19 @@
+<div style="padding: 20px;">
+  <h1>Angular Week-07 Assignment</h1>
+
+  <button (click)="addSection()" style="padding: 10px; background-color: blue; color: white;
+                  margin-bottom: 20px;">
+    Add Section
+  </button>
+
+  @for (sec of sections(); track $index) {
+    <app-dynamic-section
+      [idx]="$index"
+      [nums]="sec"
+      (numsChange)="updateSection($index, $event)"
+      (removeSection)="removeSection($index)">
+    </app-dynamic-section>
+  }
+
+  <div style="margin-top: 20px;">Total Sections: {{ sections().length }}</div>
+</div>

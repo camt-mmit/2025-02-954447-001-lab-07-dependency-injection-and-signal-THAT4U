@@ -1,11 +1,13 @@
 export interface Contact {
-readonly name: string;
-readonly tels: readonly string[];
+  readonly name: string;
+  readonly tels: readonly string[];
 }
+
 export interface TelModel {
-value: string;
+  value: string;
 }
+
 export interface ContactModel {
-name: string;
-tels: readonly TelModel[];
+  name: string;
+  tels: readonly TelModel[];
 }

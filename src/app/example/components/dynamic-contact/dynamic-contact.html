@@ -1,15 +1,25 @@
 <header>
-  <button type="button">+ Contack</button>
+  <span>
+    <button type="button" (click)="addContact()" class="app-cmp-button app-cl-filled">
+      <i class="material-symbols-outlined">post_add</i>
+      Contact
+    </button>
+  </span>
+
+  <span class="-cl-float-right">
+    <span class="-cmp-contacts-summary app-cl-number">({{ contacts().length | number }})</span>
+  </span>
 </header>
 
-<ul>
-  @for(contact of contacts(); track contact) {
+<ul class="-cmp-list">
+  @for (contact of contacts(); track contact) {
     <li>
       <app-dynamic-tel
-      [number]="$index + 1"
-      [contact]="contact"
-      [removable]="$count > 1"
-      (contactChange)="removeContact($index)"
+        [number]="$index + 1"
+        [contact]="contact"
+        [removable]="$count > 1"
+        (contactChange)="changeContact($index, $event)"
+        (remove)="removeContact($index)"
       />
     </li>
   }

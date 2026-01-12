@@ -1,0 +1,21 @@
+<header class="main-header">
+  <button type="button" class="btn-add-section" (click)="addSection()">
+    <span class="icon">＋</span> Section
+  </button>
+
+  <span class="section-count">({{ sections().length }})</span>
+</header>
+
+<ul class="section-list">
+  @for (section of sections(); track section; let i = $index; let count = $count) {
+    <li class="section-item">
+      <app-dynamic-input
+        [number]="i + 1"
+        [section]="section"
+        [removable]="count > 1"
+        (sectionChange)="changeSection(i, $event)"
+        (remove)="removeSection(i)"
+      />
+    </li>
+  }
+</ul>

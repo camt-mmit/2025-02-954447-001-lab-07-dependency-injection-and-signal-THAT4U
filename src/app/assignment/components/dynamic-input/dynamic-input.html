@@ -1,0 +1,31 @@
+<header class="section-header">
+  <button type="button" (click)="addInput()">+ Input</button>
+  <b>Section {{ number() }}</b>
+
+  @if (removable()) {
+    <button type="button" class="remove-section" (click)="remove.emit()">✕</button>
+  }
+</header>
+
+<ul class="input-list">
+  @for (item of section().inputs; track item; let i = $index; let count = $count) {
+    <li class="input-item">
+      <span>Number {{ i + 1 }}</span>
+      <input
+        type="number"
+        [value]="item.value"
+        (input)="changeInput(i, $any($event.target).value)"
+      />
+
+      @if (count > 1) {
+        <button type="button" class="remove-input" (click)="removeInput(i)">X</button>
+      }
+    </li>
+  }
+</ul>
+
+<footer class="section-footer">
+  <div class="section-total">
+    <strong>Result: {{ totalResult() | number }}</strong>
+  </div>
+</footer>

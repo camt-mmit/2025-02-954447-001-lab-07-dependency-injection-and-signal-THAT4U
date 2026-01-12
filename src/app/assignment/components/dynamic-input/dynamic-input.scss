@@ -1,0 +1,116 @@
+:host {
+  display: block;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+
+  b {
+    font-size: 1.1rem;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  button {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 6px 12px;
+    border: none;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.8; }
+    
+    // ปุ่ม + Input
+    &:first-child {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+    }
+
+    // ปุ่มลบ Section (✕)
+    &.remove-section {
+      background-color: #dc3545;
+      color: white;
+      font-size: 18px;
+      padding: 4px 10px;
+    }
+  }
+}
+
+.input-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .input-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid #f1f1f1;
+
+    &:last-child { border-bottom: none; }
+
+    span {
+      min-width: 100px;
+      font-weight: 500;
+      color: #555;
+    }
+
+    input {
+      flex-grow: 1;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      margin: 0 10px;
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+      }
+    }
+
+    .remove-input {
+      background-color: #ffcdd2;
+      color: #c62828;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-weight: bold;
+
+      &:hover { background-color: #ef9a9a; }
+    }
+  }
+}
+
+.section-footer {
+  padding: 12px 16px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  text-align: right;
+
+  .section-total {
+    font-size: 1.1rem;
+    color: #333;
+    
+    strong {
+      color: #000;
+      border-bottom: 2px double #333;
+      padding-bottom: 2px;
+    }
+  }
+}
